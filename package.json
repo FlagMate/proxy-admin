@@ -1,0 +1,21 @@
+{
+  "name": "proxyceptor-admin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ProxyCeptor Admin - Enterprise admin platform",
+  "scripts": {
+    "commit": "node scripts/commit.js",
+    "deployment": "node scripts/deployment.js",
+    "dev": "concurrently -n \"server,app\" -c \"blue,cyan\" \"npm run server:dev\" \"npm run client\"",
+    "start": "concurrently -n \"server,app\" -c \"blue,cyan\" \"npm run server\" \"npm run client\"",
+    "server": "npm start --prefix proxy-adminserver",
+    "server:dev": "npm run dev --prefix proxy-adminserver",
+    "client": "npm run dev --prefix proxy-adminapp",
+    "client:build": "npm run build --prefix proxy-adminapp",
+    "build": "npm run build --prefix proxy-adminapp",
+    "install:all": "npm install --prefix proxy-adminserver && npm install --prefix proxy-adminapp"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
